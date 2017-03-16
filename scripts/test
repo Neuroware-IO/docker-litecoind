@@ -1,0 +1,14 @@
+#!/bin/bash
+
+inspect_docker_image () {
+	if ! docker inspect neuroware/litecoind &>/dev/null; then
+		echo "Unable to inspect the image"
+		exit 1
+	fi
+}
+
+make build &> /dev/null
+
+inspect_docker_image
+
+echo "All tests passed"
