@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN mkdir -p $appdir
 RUN cd $appdir && \
-		wget -qO- https://download.litecoin.org/litecoin-0.13.2/linux/litecoin-0.13.2-x86_64-linux-gnu.tar.gz \
+		wget -qO- https://download.litecoin.org/litecoin-0.14.2/linux/litecoin-0.14.2-x86_64-linux-gnu.tar.gz \
 		| tar --strip-components=1 -xz \
 		# && chown -R ${user_id} $appdir/bin/* \
 		&& ln -s $appdir/bin/* /usr/local/bin/
@@ -50,7 +50,7 @@ RUN chmod +x /usr/local/bin/setup
 
 VOLUME ["/litecoin"]
 
-EXPOSE 9332 9333 19332 19333
+EXPOSE 9332 9333 19332 19335
 
 WORKDIR ${HOME}
 
